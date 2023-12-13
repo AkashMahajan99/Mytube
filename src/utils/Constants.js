@@ -10,10 +10,12 @@ import HistoryIcon from "../assets/history.svg"
 import LibraryIcon from "../assets/library.svg"
 import SubscribeIcon from "../assets/subscribe.svg"
 import Wathclater from '../assets/watchlater.svg'
+import conf from "./conf"
 
-const apiKey = import.meta.env.VITE_API_KEY; 
-console.log(apiKey)
-export const VIDEO_LIST_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&chart=mostPopular&regionCode=IN&key=AIzaSyA27Psev3opx1WALjWPcDr3CE6HXZfIyN0`;
+
+const apiKey = conf.apikey; 
+
+export const VIDEO_LIST_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&chart=mostPopular&regionCode=IN&key=${apiKey}`;
 export const COMMENTS_THREAD_URL = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&key=${apiKey}&maxResults=100`;
 export const VIDEO_INFO_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${apiKey}` ;
 export const SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&key=${apiKey}`;
